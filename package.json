@@ -53,6 +53,7 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "prepublishOnly": "standard-version"
+    "changelog": "standard-version",
+    "precommit": "npm run changelog"
   }
 }
