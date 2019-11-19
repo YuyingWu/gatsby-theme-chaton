@@ -53,6 +53,6 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "postcommit": "standard-version"
+    "prepublishOnly": "standard-version"
   }
 }
