@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/YuyingWu/gatsby-theme-chaton"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-theme-blog#readme",
+  "homepage": "https://github.com/YuyingWu/gatsby-theme-chaton#readme",
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@mdx-js/react": "^1.5.1",

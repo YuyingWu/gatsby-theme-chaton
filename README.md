@@ -1,13 +1,41 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  The Gatsby blog theme
+  Gatsby Theme Chaton
 </h1>
 
-A Gatsby theme for creating a blog. 
+Gatsby Theme Chaton, a Gatsby theme for creating a blog. 
 
-Note: gatsby-theme-chaton, is inspired by and forked from [gatsby-theme-blog](https://github.com/gatsbyjs/gatsby-starter-blog-theme).
+## Installing the Theme
 
+To install it, run in the root of your site:
+
+```
+npm install --save gatsby-theme-chaton
+```
+
+## Theme options
+
+```js
+// gatsby-config.js
+
+module.exports = {
+  plugins: [
+    {
+      resolve: `gatsby-theme-chaton`,
+      options: {
+        /*
+        - basePath defaults to `/`
+        - contentPath defaults to `content/posts`
+        - assetPath defaults to `content/assets`
+        - mdx defaults to `true`
+        */
+        basePath: `/blog`,
+        contentPath: `content/blogPosts`,
+        assetPath: `content/blogAssets`,
+        mdx: false,
+      },
+    },
+  ],
+}
+```
+
+🎉🎉🎉 gatsby-theme-chaton, is inspired by and forked from [gatsby-theme-blog](https://github.com/gatsbyjs/gatsby-starter-blog-theme). 
