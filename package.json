@@ -53,6 +53,6 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "post-commit": "standard-version"
+    "postcommit": "standard-version"
   }
 }
