@@ -33,6 +33,8 @@ const Tags = ({ location, pageContext, data }) => {
           })}
         </ul>
       </main>
+
+      <Footer />
     </Layout>
   );
 };

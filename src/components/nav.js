@@ -13,7 +13,6 @@ const Nav = () => {
         mx: `auto`,
         display: "flex",
         mb: 3,
-        px: 3,
         justifyContent: "space-between"
       })}
     >

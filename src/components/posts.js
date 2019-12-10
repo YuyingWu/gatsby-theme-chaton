@@ -6,22 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Footer from "../components/home-footer"
 
-const Posts = ({ location, posts, siteTitle, socialLinks }) => {
-  const { site: siteMetadata } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            copyright
-          }
-        }
-      }
-    `
-  )
-
+const Posts = ({ location, posts, siteTitle }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <main>
@@ -54,7 +39,7 @@ const Posts = ({ location, posts, siteTitle, socialLinks }) => {
           )
         })}
       </main>
-      <Footer socialLinks={socialLinks} siteTitle={siteTitle} {...siteMetadata} />
+      <Footer />
     </Layout>
   )
 }
