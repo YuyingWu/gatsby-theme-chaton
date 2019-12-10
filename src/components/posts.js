@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { Styled, css } from "theme-ui"
 
 import Layout from "../components/layout"

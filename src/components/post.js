@@ -1,10 +1,9 @@
 import React from "react"
 import { Styled, css } from "theme-ui"
-
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import PostFooter from "../components/post-footer"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const Post = ({
   data: {
@@ -19,6 +18,7 @@ const Post = ({
 }) => (
   <Layout location={location} title={title}>
     <SEO title={post.title} description={post.excerpt} />
+
     <main>
       <Styled.h1 css={css({
           fontSize: 3,

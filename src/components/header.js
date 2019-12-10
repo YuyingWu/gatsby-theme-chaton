@@ -5,6 +5,7 @@ import Switch from "./switch"
 import Bio from "../components/bio"
 import sun from "../../assets/sun.png"
 import moon from "../../assets/moon.png"
+import Nav from './nav'
 
 const rootPath = `${__PATH_PREFIX__}/`
 
@@ -120,6 +121,9 @@ export default ({ children, title, ...props }) => {
             onChange={toggleColorMode}
           />
         </div>
+
+        <Nav />
+
         {props.location.pathname === rootPath && <Bio />}
       </div>
     </header>
