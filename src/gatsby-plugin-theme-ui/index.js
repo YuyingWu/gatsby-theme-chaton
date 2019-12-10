@@ -8,11 +8,11 @@ export default merge(typography, {
   initialColorMode: `light`,
   colors,
   fonts: {
-    heading: `Montserrat, sans-serif`,
+    heading: `Montserrat, Hiragino Sans GB, sans-serif`,
     monospace: `Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
   },
   sizes: {
-    container: 672,
+    container: 980,
   },
   styles,
   prism,

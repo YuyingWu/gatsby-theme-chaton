@@ -1,17 +1,21 @@
 import React, { Fragment } from "react"
 import { Styled, css } from "theme-ui"
 
-const Footer = ({ socialLinks }) => (
+const Footer = ({
+  socialLinks,
+  siteMetadata: {
+    copyright,
+    author,
+  },
+}) => (
   <footer
     css={css({
       mt: 4,
       pt: 3,
     })}
   >
-    © {new Date().getFullYear()}, Powered by
-    {` `}
-    <a href="https://www.gatsbyjs.org">Gatsby</a>
-    {` `}&bull;{` `}
+    <span dangerouslySetInnerHTML={{ __html: copyright }} />, authored by {author}.
+    <br />
     {socialLinks.map((platform, i, arr) => (
       <Fragment key={platform.url}>
         <Styled.a href={platform.url} target="_blank" rel="noopener noreferrer">

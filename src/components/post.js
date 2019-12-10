@@ -20,7 +20,9 @@ const Post = ({
   <Layout location={location} title={title}>
     <SEO title={post.title} description={post.excerpt} />
     <main>
-      <Styled.h1>{post.title}</Styled.h1>
+      <Styled.h1 css={css({
+          fontSize: 3,
+        })}>{post.title}</Styled.h1>
       <Styled.p
         css={css({
           fontSize: 1,

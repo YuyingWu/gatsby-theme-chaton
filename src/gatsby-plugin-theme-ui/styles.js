@@ -29,6 +29,10 @@ export default {
     paddingX: `0.2em`,
   },
   // from typography overrideThemeStyles
+  h2: {
+    fontSize: 3,
+    lineHeight: 1.5,
+  },
   a: {
     color: `primary`,
   },

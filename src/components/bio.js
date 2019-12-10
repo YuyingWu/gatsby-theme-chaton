@@ -10,18 +10,19 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import { Styled, css, Flex } from "theme-ui"
 import BioContent from "./bio-content"
+import Styles from './Bio.module.css';
 
 const Bio = () => {
   const data = useStaticQuery(bioQuery)
   const {
     site: {
-      siteMetadata: { author },
+      siteMetadata: { author, siteUrl, social, description },
     },
     avatar,
   } = data
 
   return (
-    <Flex css={css({ mb: 4, alignItems: `center` })}>
+    <Flex css={css({ alignItems: `center` })} className={Styles.container}>
       {avatar ? (
         <Image
           fixed={avatar.childImageSharp.fixed}
@@ -47,7 +48,7 @@ const Bio = () => {
         />
       )}
       <Styled.div>
-        <BioContent />
+        <BioContent author={author} siteUrl={siteUrl} social={social} description={description} />
       </Styled.div>
     </Flex>
   )
@@ -58,6 +59,12 @@ const bioQuery = graphql`
     site {
       siteMetadata {
         author
+        description
+        siteUrl
+        social {
+          name
+          url
+        }
       }
     }
     avatar: file(absolutePath: { regex: "/avatar.(jpeg|jpg|gif|png)/" }) {
