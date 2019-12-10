@@ -6,11 +6,8 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Footer from "../components/home-footer";
 
-const Tags = ({ location, pageContext, data }) => {
-  const { tag } = pageContext;
-  const { allBlogPost, site } = data;
-
-  debugger
+const Categories = ({ location, pageContext, data }) => {
+  const { allMdx = {}, site } = data;
 
   return (
     <Layout location={location} title={site.siteMetadata.title}>
@@ -19,19 +16,16 @@ const Tags = ({ location, pageContext, data }) => {
           fontSize: 3
         })}
       >
-        <Styled.a as={Link} to="/tags">
-          Tags
-        </Styled.a>
-        - {tag} ({allBlogPost.totalCount})
+        Categories ({allMdx.totalCount})
       </Styled.h1>
       <main>
         <ul>
-          {allBlogPost.edges.map(({ node }) => {
-            const { slug, title } = node;
+          {allMdx.group.map(node => {
+            const { totalCount, fieldValue: title } = node;
             return (
-              <li key={slug}>
-                <Styled.a as={Link} to={slug} key={`nav-${title}`}>
-                  {title}
+              <li key={title}>
+                <Styled.a as={Link} to={`/categories/${title}`} key={`nav-${title}`}>
+                  {title} ({totalCount})
                 </Styled.a>
               </li>
             );
@@ -44,26 +38,20 @@ const Tags = ({ location, pageContext, data }) => {
   );
 };
 
-export default Tags;
+export default Categories;
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  {
     site {
       siteMetadata {
         title
       }
     }
-    allBlogPost(
-      filter: { tags: { in: [$tag] } }
-      sort: { fields: date, order: DESC }
-      limit: 2000
-    ) {
+    allMdx(limit: 2000, sort: {fields: [frontmatter___date], order: DESC}) {
       totalCount
-      edges {
-        node {
-          slug
-          title
-        }
+      group(field: frontmatter___categories) {
+        fieldValue
+        totalCount
       }
     }
   }

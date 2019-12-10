@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 import Footer from "../components/home-footer";
 
 const Categories = ({ location, pageContext, data }) => {
-  const { tag } = pageContext;
+  const { category } = pageContext;
   const { allMdx = {}, site } = data;
 
   return (
@@ -17,7 +17,10 @@ const Categories = ({ location, pageContext, data }) => {
           fontSize: 3
         })}
       >
-        Category - {tag} ({allMdx.totalCount})
+        <Styled.a as={Link} to="/categories">
+          Category
+        </Styled.a>
+         - {category} ({allMdx.totalCount})
       </Styled.h1>
       <main>
         <ul>
