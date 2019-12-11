@@ -1,7 +1,6 @@
 import React, { Fragment } from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import { Styled, css } from "theme-ui"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Footer from "../components/home-footer"
