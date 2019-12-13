@@ -12,6 +12,14 @@ To install it, run in the root of your site:
 npm install --save gatsby-theme-chaton
 ```
 
+## Amazing Features
+
+* Customed Navigator
+* Page Category
+* Page Tag
+* Google Analytics
+* Feed rss.xml
+
 ## Theme options
 
 ```js
@@ -28,14 +36,9 @@ module.exports = {
         - assetPath defaults to `content/assets`
         - mdx defaults to `true`
         */
-        basePath: `/blog`,
-        contentPath: `content/blogPosts`,
-        assetPath: `content/blogAssets`,
-        mdx: false,
+        googleAnalytics: 'your-ga-track-id',
       },
     },
   ],
 }
 ```
-
-🎉🎉🎉 gatsby-theme-chaton, is inspired by and forked from [gatsby-theme-blog](https://github.com/gatsbyjs/gatsby-starter-blog-theme). 
