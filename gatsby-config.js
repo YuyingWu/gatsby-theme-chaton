@@ -1,13 +1,21 @@
 module.exports = options => {
+  const { googleAnalytics } = options;
+
   return {
     plugins: [
       {
         resolve: `gatsby-theme-blog-core`,
-        options,
+        options
       },
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-emotion`,
       `gatsby-plugin-theme-ui`,
+      {
+        resolve: `gatsby-plugin-google-analytics`,
+        options: {
+          trackingId: googleAnalytics,
+        }
+      },
       {
         resolve: `gatsby-plugin-feed`,
         options: {
@@ -27,15 +35,18 @@ module.exports = options => {
             {
               serialize: ({ query: { site, allBlogPost } }) => {
                 return allBlogPost.edges.map(edge => {
-                  return Object.assign({}, {
-                    description: edge.node.excerpt,
-                    date: edge.node.date,
-                    url: site.siteMetadata.siteUrl + edge.node.slug,
-                    guid: site.siteMetadata.siteUrl + edge.node.slug,
-                    title: edge.node.title,
-                    // custom_elements: [{ "content:encoded": edge.node.html }],
-                  })
-                })
+                  return Object.assign(
+                    {},
+                    {
+                      description: edge.node.excerpt,
+                      date: edge.node.date,
+                      url: site.siteMetadata.siteUrl + edge.node.slug,
+                      guid: site.siteMetadata.siteUrl + edge.node.slug,
+                      title: edge.node.title
+                      // custom_elements: [{ "content:encoded": edge.node.html }],
+                    }
+                  );
+                });
               },
               query: `
               {
@@ -52,11 +63,11 @@ module.exports = options => {
               }
               `,
               output: "/rss.xml",
-              title: "RSS Feed",
-            },
-          ],
-        },
-      },
-    ],
-  }
-}
+              title: "RSS Feed"
+            }
+          ]
+        }
+      }
+    ]
+  };
+};

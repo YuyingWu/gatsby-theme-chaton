@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Styled, css } from "theme-ui";
 
 const Footer = () => {
