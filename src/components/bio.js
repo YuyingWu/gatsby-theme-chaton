@@ -16,7 +16,7 @@ const Bio = () => {
   const data = useStaticQuery(bioQuery)
   const {
     site: {
-      siteMetadata: { author, siteUrl, social, description },
+      siteMetadata: { author, social, description, aboutUrl },
     },
     avatar,
   } = data
@@ -48,7 +48,7 @@ const Bio = () => {
         />
       )}
       <Styled.div>
-        <BioContent author={author} siteUrl={siteUrl} social={social} description={description} />
+        <BioContent author={author} social={social} description={description} aboutUrl={aboutUrl} />
       </Styled.div>
     </Flex>
   )
@@ -60,7 +60,7 @@ const bioQuery = graphql`
       siteMetadata {
         author
         description
-        siteUrl
+        aboutUrl
         social {
           name
           url
