@@ -1,6 +1,6 @@
-const purple60 = `#663399`
-const purple30 = `#D9BAE8`
-const darkBlue = `#007acc`
+// const purple60 = `#663399`
+// const purple30 = `#D9BAE8`
+// const darkBlue = `#007acc`
 const lightBlue = `#66E0FF`
 const blueGray = `#282c35`
 const grey90 = `#232129`
@@ -14,7 +14,7 @@ const lightGray = `hsla(0, 0%, 0%, 0.2)`
 export default {
   text: grey90,
   background: white,
-  primary: darkBlue,
+  primary: black80,
   secondary: black80,
   muted: lightGray,
   highlight: opaqueLightYellow,

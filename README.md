@@ -15,8 +15,8 @@ npm install --save gatsby-theme-chaton
 ## Amazing Features
 
 * Customed Navigator
-* Page Category
-* Page Tag
+* Page Categories
+* Page Tags
 * Google Analytics
 * Feed rss.xml
 
