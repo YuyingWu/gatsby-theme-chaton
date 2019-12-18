@@ -26,6 +26,29 @@ npm install --save gatsby-theme-chaton
 // gatsby-config.js
 
 module.exports = {
+  pathPrefix: '/',
+  siteMetadata: {
+    title: `Yuying Wu's Blog`,
+    author: `Yuying Wu`,
+    description: `Personal blog, recording codes, life, growth.`,
+    copyright: `Powered by Gatsby and gatsby-theme-chaton.`,
+    siteUrl: `https://wuyuying.com`,
+    aboutUrl: `/about`,
+    social: [{
+      name: 'twitter',
+      url: 'https://mobile.twitter.com/wuyuying1128',
+    }, {
+      name: 'github',
+      url: 'https://github.com/YuyingWu',
+    }],
+    nav: [{
+      title: 'Home',
+      link: '/',
+    }, {
+      title: 'Technology',
+      link: '/categories/tech/',
+    }]
+  },
   plugins: [
     {
       resolve: `gatsby-theme-chaton`,

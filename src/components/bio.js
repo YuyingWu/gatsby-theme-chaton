@@ -5,24 +5,34 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
-import { Styled, css, Flex } from "theme-ui"
-import BioContent from "./bio-content"
-import Styles from './Bio.module.css';
+/** @jsx jsx */
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
+import { Styled, css, Flex, jsx } from "theme-ui";
+import BioContent from "./bio-content";
+// import Styles from './Bio.module.css';
 
 const Bio = () => {
-  const data = useStaticQuery(bioQuery)
+  const data = useStaticQuery(bioQuery);
   const {
     site: {
-      siteMetadata: { author, social, description, aboutUrl },
+      siteMetadata: { author, social, description, aboutUrl }
     },
-    avatar,
-  } = data
+    avatar
+  } = data;
 
   return (
-    <Flex css={css({ alignItems: `center` })} className={Styles.container}>
+    <Flex
+      css={css({ alignItems: `center` })}
+      sx={{
+        // applies width 100% to all viewport widths,
+        // width 50% above the first breakpoint,
+        // and 25% above the next breakpoint
+        // width: ['100%', '50%', '25%'],
+        fontSize: [1, 2, 2] // picks up value from `theme.fontSizes[4]`
+      }}
+    >
       {avatar ? (
         <Image
           fixed={avatar.childImageSharp.fixed}
@@ -32,7 +42,7 @@ const Bio = () => {
             mb: 0,
             width: 48,
             minWidth: 48,
-            borderRadius: 99999,
+            borderRadius: 99999
           })}
         />
       ) : (
@@ -42,17 +52,22 @@ const Bio = () => {
             mb: 0,
             width: 48,
             minWidth: 48,
-            borderRadius: 99999,
+            borderRadius: 99999
           })}
           role="presentation"
         />
       )}
       <Styled.div>
-        <BioContent author={author} social={social} description={description} aboutUrl={aboutUrl} />
+        <BioContent
+          author={author}
+          social={social}
+          description={description}
+          aboutUrl={aboutUrl}
+        />
       </Styled.div>
     </Flex>
-  )
-}
+  );
+};
 
 const bioQuery = graphql`
   query BioQuery {
@@ -75,6 +90,6 @@ const bioQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Bio
+export default Bio;
