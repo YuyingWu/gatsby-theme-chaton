@@ -51,8 +51,12 @@ export default {
   },
   blockquote: {
     color: `inherit`,
-    borderLeftColor: `inherit`,
+    borderLeftColor: `primary`,
     opacity: 0.8,
+    borderLeftWidth: 2,
+    borderLeftStyle: 'solid',
+    marginLeft: 0,
+    paddingLeft: 2,
     "&.translation": {
       fontSize: `1em`,
     },
