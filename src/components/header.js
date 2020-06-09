@@ -21,7 +21,7 @@ const Title = ({ children, location }) => {
         <Styled.a
           as={Link}
           css={{
-            color: `inherit`,
+            color: `secondary`,
             boxShadow: `none`,
             textDecoration: `none`,
           }}
