@@ -53,6 +53,8 @@ const Post = ({
       <main>
         <Styled.h1 css={css({
             fontSize: 3,
+            color: `primary`,
+            mb: 4,
           })}>{post.title}</Styled.h1>
         <Styled.p
           css={css({

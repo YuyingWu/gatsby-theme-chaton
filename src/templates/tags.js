@@ -18,7 +18,7 @@ const Tags = ({ location, pageContext, data }) => {
         })}
       >
         <Styled.a as={Link} to="/tags">
-          Tags
+          Tags&nbsp;
         </Styled.a>
         - {tag} ({allBlogPost.totalCount})
       </Styled.h1>

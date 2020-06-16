@@ -29,7 +29,7 @@ const heading = Tag => props => (
         visibility: `visible`,
       },
       pointerEvents: `painted`,
-      color: `heading`,
+      color: `secondary`,
     }}
   >
     <a

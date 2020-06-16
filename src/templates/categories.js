@@ -18,7 +18,7 @@ const Categories = ({ location, pageContext, data }) => {
         })}
       >
         <Styled.a as={Link} to="/categories">
-          Category
+          Category&nbsp;
         </Styled.a>
          - {category} ({allMdx.totalCount})
       </Styled.h1>
