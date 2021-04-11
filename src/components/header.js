@@ -3,8 +3,6 @@ import { Link } from "gatsby"
 import { css, useColorMode, Styled } from "theme-ui"
 import Switch from "./switch"
 import Bio from "../components/bio"
-import sun from "../../assets/sun.png"
-import moon from "../../assets/moon.png"
 import Nav from './nav'
 
 const rootPath = `${__PATH_PREFIX__}/`
@@ -55,34 +53,6 @@ const Title = ({ children, location }) => {
   }
 }
 
-const checkedIcon = (
-  <img
-    alt="moon indicating dark mode"
-    src={moon}
-    width="16"
-    height="16"
-    role="presentation"
-    css={{
-      pointerEvents: `none`,
-      margin: 4,
-    }}
-  />
-)
-
-const uncheckedIcon = (
-  <img
-    alt="sun indicating light mode"
-    src={sun}
-    width="16"
-    height="16"
-    role="presentation"
-    css={{
-      pointerEvents: `none`,
-      margin: 4,
-    }}
-  />
-)
-
 export default ({ children, title, ...props }) => {
   const [colorMode, setColorMode] = useColorMode()
   const isDark = colorMode === `dark`
@@ -112,11 +82,8 @@ export default ({ children, title, ...props }) => {
           {children}
           <Switch
             aria-label="Toggle dark mode"
-            css={css({
-              bg: `black`,
-            })}
-            checkedIcon={checkedIcon}
-            uncheckedIcon={uncheckedIcon}
+            checkedIcon={null}
+            uncheckedIcon={null}
             checked={isDark}
             onChange={toggleColorMode}
           />
