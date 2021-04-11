@@ -82,8 +82,8 @@ export default ({ children, title, ...props }) => {
           {children}
           <Switch
             aria-label="Toggle dark mode"
-            checkedIcon={null}
-            uncheckedIcon={null}
+            checkedIcon={<span style={{ color: 'transparent' }}>Light</span>}
+            uncheckedIcon={<span style={{ color: 'transparent' }}>Dark</span>}
             checked={isDark}
             onChange={toggleColorMode}
           />
