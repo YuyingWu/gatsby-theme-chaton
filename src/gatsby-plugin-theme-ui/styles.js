@@ -29,9 +29,22 @@ export default {
     paddingX: `0.2em`,
   },
   // from typography overrideThemeStyles
+  h1: {
+    color: 'inherit !important'
+  },
   h2: {
+    color: 'inherit !important',
     fontSize: 3,
     lineHeight: 1.5,
+  },
+  h3: {
+    color: 'inherit !important'
+  },
+  h4: {
+    color: 'inherit !important'
+  },
+  h5: {
+    color: 'inherit !important'
   },
   a: {
     color: `primary`,
