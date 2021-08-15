@@ -8,18 +8,15 @@
 /** @jsx jsx */
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
 import { Styled, css, Flex, jsx } from "theme-ui";
 import BioContent from "./bio-content";
-// import Styles from './Bio.module.css';
 
 const Bio = () => {
   const data = useStaticQuery(bioQuery);
   const {
     site: {
-      siteMetadata: { author, social, description, aboutUrl }
+      siteMetadata: { author, social, description, aboutUrl, avatar }
     },
-    avatar
   } = data;
 
   return (
@@ -34,8 +31,8 @@ const Bio = () => {
       }}
     >
       {avatar ? (
-        <Image
-          fixed={avatar.childImageSharp.fixed}
+        <img
+          src={avatar}
           alt={author}
           css={css({
             mr: 2,
@@ -51,11 +48,17 @@ const Bio = () => {
             mr: 2,
             mb: 0,
             width: 48,
+            height: 48,
             minWidth: 48,
-            borderRadius: 99999
+            borderRadius: '#99999',
+            background: 'orange',
+            borderRadius: '50%',
+            lineHeight: '48px',
+            fontSize: '12px',
+            textAlign: 'center',
           })}
           role="presentation"
-        />
+        >Avatar</div>
       )}
       <Styled.div>
         <BioContent
@@ -74,18 +77,12 @@ const bioQuery = graphql`
     site {
       siteMetadata {
         author
+        avatar
         description
         aboutUrl
         social {
           name
           url
-        }
-      }
-    }
-    avatar: file(absolutePath: { regex: "/avatar.(jpeg|jpg|gif|png)/" }) {
-      childImageSharp {
-        fixed(width: 48, height: 48) {
-          ...GatsbyImageSharpFixed
         }
       }
     }

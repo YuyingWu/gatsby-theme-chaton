@@ -34,6 +34,7 @@ module.exports = {
     copyright: `Powered by Gatsby and gatsby-theme-chaton.`,
     siteUrl: `https://wuyuying.com`,
     aboutUrl: `/about`,
+    avatar: 'https://static.wuyuying.com/avatar.jpeg',
     social: [{
       name: 'twitter',
       url: 'https://mobile.twitter.com/wuyuying1128',
